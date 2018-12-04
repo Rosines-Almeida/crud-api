@@ -1,0 +1,22 @@
+{
+  "author": "Glaucia Lemos",
+  "license": "MIT",
+  "version": "1.0.0",
+  "description": "Tutorial - Desenvolvendo uma Aplicação RESTful API - Node.Js &amp;amp;amp;amp;amp; Express com MongoDb",
+  "name": "node-api-crud",
+  "main": "server.js",
+  "scripts": {
+    "start": "node index.js",
+    "start-dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "body-parser": "~1.18.1",
+    "express": "~4.15.0",
+    "mongoose": "~4.11.12",
+    "request": "^2.74.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.7"
+  }
+}

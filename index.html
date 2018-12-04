@@ -1,0 +1,45 @@
+ 
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <h1 id="infos"></h1>
+  <input type="text" id="frutaInput" value=></input>
+  <button id="btnFruta">selecionar fruta</button>
+
+
+  <script>
+    var btnFruta = document.getElementById('btnFruta');
+  
+    btnFruta.addEventListener('click',function(){
+ 
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if(this.readyState == 4 && this.status == 200) {
+          var h1 = document.getElementById('infos');
+          var info = JSON.parse(xhttp.responseText);
+          console.log(info  )
+          console.log(info.nome )
+          h1.innerText = 'Nome do cliente ' + info.nome + ' cpf ' + info.cpf;
+        }
+      }
+
+     var frutaInput = document.getElementById('frutaInput');
+     //rota de id 
+      xhttp.open("GET", "/api/produtos/" + frutaInput.value, true);
+      console.log(xhttp)
+      xhttp.send();
+ 
+    });
+  
+
+
+    
+  </script>
+</body>
+</html>
